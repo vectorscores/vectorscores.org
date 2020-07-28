@@ -1,8 +1,8 @@
-const requireRoot = require("app-root-path").require;
-const { movementsFromUrl } = requireRoot("render-utils");
+//const { movementsFromUrl } = requireRoot("render-utils");
+const { movementsFromUrl } = require("@vectorscores/design");
 const { catMap, maybe } = require("eleventy-lib");
 
-const workLink = require("./work-link.11ty.js");
+const workLink = () => {} // require("./work-link.11ty.js");
 
 const filterByStatus = (works, status) =>
   works.filter((w) => w.data.status === status);
@@ -34,12 +34,8 @@ const workRow = (d) =>
         </td>
      </tr>`;
 
-const scoreLayouts = ["score", "score-set"];
-
 module.exports = (data) => {
-  const works = data.collections.all.filter((f) =>
-    scoreLayouts.includes(f.data.layout)
-  );
+  const works = data.works
 
   return `
     <h3>Published</h3>

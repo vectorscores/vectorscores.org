@@ -1,7 +1,5 @@
 const requireRoot = require("app-root-path").require;
-const workList = () => {};
-//requireRoot("_includes/partials/work-list-by-status.11ty.js");
-//const workList = requireRoot("_includes/partials/work-list-by-status.11ty.js");
+const workList = requireRoot("partials/work-list-by-status.11ty.js");
 
 module.exports = class {
   data() {
@@ -14,6 +12,8 @@ module.exports = class {
   }
 
   render(data) {
-    return "TODO"; // workList(data);
+    //console.log(data.works)
+    //return data.works.join(" TODO " ) // workList(data);
+    return workList(data);
   }
 };

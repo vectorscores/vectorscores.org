@@ -4,12 +4,16 @@
   "description": "",
   "main": "dist",
   "scripts": {
+    "build": "eleventy",
+    "serve": "eleventy --serve",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "John Teske",
   "license": "MIT",
   "dependencies": {
     "@11ty/eleventy": "^0.11.0",
+    "@vectorscores/design": "link",
+    "@vectorscores/vectorscores": "link",
     "app-root-path": "^3.0.0",
     "eleventy-lib": "github:johnteske/eleventy-lib",
     "ffdb-jtm": "github:johnteske/ffdb-jtm"
