@@ -1,21 +1,29 @@
 {
-  "name": "@vectorscores/website",
+  "name": "@vectorscores/vectorscores.org",
   "version": "1.0.0",
   "description": "",
   "main": "dist",
   "scripts": {
     "build": "eleventy",
+    "format": "prettier '**/*.js' --write",
     "serve": "eleventy --serve",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "homepage": "https://vectorscores.org",
   "author": "John Teske",
   "license": "MIT",
   "dependencies": {
     "@11ty/eleventy": "^0.11.0",
+    "@typescript-eslint/eslint-plugin": "^3.7.1",
+    "@typescript-eslint/parser": "^3.7.1",
+    "@vectorscores/configs": "link",
     "@vectorscores/design": "link",
-    "@vectorscores/vectorscores": "link",
+    "@vectorscores/scores": "link",
     "app-root-path": "^3.0.0",
     "eleventy-lib": "github:johnteske/eleventy-lib",
-    "ffdb-jtm": "github:johnteske/ffdb-jtm"
+    "eslint": "^7.5.0",
+    "ffdb-jtm": "github:johnteske/ffdb-jtm",
+    "prettier": "^2.0.5",
+    "typescript": "^3.9.7"
   }
 }

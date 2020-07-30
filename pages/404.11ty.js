@@ -7,7 +7,7 @@ module.exports = class {
     };
   }
 
-  render(data) {
+  render() {
     return `Page not found.`;
   }
 };

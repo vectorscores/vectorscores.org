@@ -1,29 +1,30 @@
-//const { movementsFromUrl } = requireRoot("render-utils");
-const { movementsFromUrl } = require("@vectorscores/design");
 const { catMap, maybe } = require("eleventy-lib");
 
-const workLink = () => {} // require("./work-link.11ty.js");
+const workLink = (work, baseUrl) =>
+  `<a href="${baseUrl + work.url}" class="work-title">${
+    work.title
+  }</a>`;
 
 const filterByStatus = (works, status) =>
-  works.filter((w) => w.data.status === status);
+  works.filter((w) => w.status === status);
 const hasFormat = (d, format) =>
-  d.data.formats && d.data.formats.includes(format);
+  d.formats && d.formats.includes(format);
 
-const workRow = (d) =>
+const workRow = baseUrl => (d) =>
   `<tr class="work-list-row">
         <td>
-          ${workLink(d)}${maybe(
-    `, for ${d.data.instrumentation}`,
-    d.data.instrumentation
+          ${workLink(d, baseUrl)}${maybe(
+    `, for ${d.instrumentation}`,
+    d.instrumentation
   )}
         </td>
         <td class="work-list-duration">
-            ${maybe(d.data.duration)}
+            ${maybe(d.duration)}
         </td>
         <td class="work-list-duration">
             ${maybe(
               (mvts) => `${mvts} mvts`,
-              movementsFromUrl(d.url, d.data).length || null
+              d.movements.length
             )}
         </td>
         <td class="work-list-formats">
@@ -35,21 +36,21 @@ const workRow = (d) =>
      </tr>`;
 
 module.exports = (data) => {
-  const works = data.works
+  const { works } = data
 
   return `
     <h3>Published</h3>
     <table class="work-list">
-        ${catMap(workRow, filterByStatus(works, "published"))}
+        ${catMap(workRow(data.site.scoreBaseUrl), filterByStatus(works, "published"))}
     </table>
     
     <h3>Works in progress</h3>
     <table class="work-list">
-        ${catMap(workRow, filterByStatus(works, "wip"))}
+        ${catMap(workRow(data.site.scoreBaseUrl), filterByStatus(works, "wip"))}
     </table>
     
     <h3>Examples and tests</h3>
     <table class="work-list">
-        ${catMap(workRow, filterByStatus(works, "test"))}
+        ${catMap(workRow(data.site.scoreBaseUrl), filterByStatus(works, "test"))}
     </table>`;
 };

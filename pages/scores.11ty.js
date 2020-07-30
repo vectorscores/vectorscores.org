@@ -12,8 +12,6 @@ module.exports = class {
   }
 
   render(data) {
-    //console.log(data.works)
-    //return data.works.join(" TODO " ) // workList(data);
     return workList(data);
   }
 };

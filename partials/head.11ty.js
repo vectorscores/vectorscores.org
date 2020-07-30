@@ -1,4 +1,3 @@
-const requireRoot = require("app-root-path").require;
 const { title, url: _url } = require("eleventy-lib");
 const _ = require("lodash");
 const canonicalUrl = (site, url) =>

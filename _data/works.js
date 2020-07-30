@@ -1,1 +1,1 @@
-module.exports = require("@vectorscores/vectorscores");
+module.exports = require("@vectorscores/scores");
