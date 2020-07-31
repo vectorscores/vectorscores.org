@@ -24,7 +24,7 @@ const workRow = baseUrl => (d) =>
         <td class="work-list-duration">
             ${maybe(
               (mvts) => `${mvts} mvts`,
-              d.movements.length
+              d.movements.length || null
             )}
         </td>
         <td class="work-list-formats">
