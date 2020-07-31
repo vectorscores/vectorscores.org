@@ -5,11 +5,12 @@ const workLink = (title, url) =>
 
 const filterByStatus = (works, status) =>
   works.filter((w) => w.status === status);
-const hasFormat = (d, format) => d.formats && d.formats.includes(format);
+
+const hasFormat = (formats, format) =>
+  formats != null && formats.includes(format);
 
 const workRow = (baseUrl) => (d) => {
   const hasMovements = d.movements.length > 0;
-
   return `<tr class="work-list-row">
         <td>
           ${workLink(
@@ -24,10 +25,10 @@ const workRow = (baseUrl) => (d) => {
             ${maybe((mvts) => `${mvts} mvts`, d.movements.length || null)}
         </td>
         <td class="work-list-formats">
-            ${maybe("score", hasFormat(d, "score"))}
+            ${hasFormat(d.formats, "score") ? "score" : ""}
         </td>
         <td class="work-list-formats">
-            ${maybe("parts", hasFormat(d, "parts"))}
+            ${hasFormat(d.formats, "parts") ? "parts" : ""}
         </td>
      </tr>`;
 };
