@@ -1,31 +1,27 @@
 const { catMap, maybe } = require("eleventy-lib");
 
-const workLink = (work, baseUrl) =>
-  `<a href="${baseUrl + work.url}" class="work-title">${
-    work.title
-  }</a>`;
+const workLink = (title, url) =>
+  `<a href="${url}" class="work-title">${title}</a>`;
 
 const filterByStatus = (works, status) =>
   works.filter((w) => w.status === status);
-const hasFormat = (d, format) =>
-  d.formats && d.formats.includes(format);
+const hasFormat = (d, format) => d.formats && d.formats.includes(format);
 
-const workRow = baseUrl => (d) =>
-  `<tr class="work-list-row">
+const workRow = (baseUrl) => (d) => {
+  const hasMovements = d.movements.length > 0;
+
+  return `<tr class="work-list-row">
         <td>
-          ${workLink(d, baseUrl)}${maybe(
-    `, for ${d.instrumentation}`,
-    d.instrumentation
-  )}
+          ${workLink(
+            d.title,
+            hasMovements ? d.url.replace("scores", "set") : baseUrl + d.url
+          )}${maybe(`, for ${d.instrumentation}`, d.instrumentation)}
         </td>
         <td class="work-list-duration">
             ${maybe(d.duration)}
         </td>
         <td class="work-list-duration">
-            ${maybe(
-              (mvts) => `${mvts} mvts`,
-              d.movements.length || null
-            )}
+            ${maybe((mvts) => `${mvts} mvts`, d.movements.length || null)}
         </td>
         <td class="work-list-formats">
             ${maybe("score", hasFormat(d, "score"))}
@@ -34,14 +30,18 @@ const workRow = baseUrl => (d) =>
             ${maybe("parts", hasFormat(d, "parts"))}
         </td>
      </tr>`;
+};
 
 module.exports = (data) => {
-  const { works } = data
+  const { works } = data;
 
   return `
     <h3>Published</h3>
     <table class="work-list">
-        ${catMap(workRow(data.site.scoreBaseUrl), filterByStatus(works, "published"))}
+        ${catMap(
+          workRow(data.site.scoreBaseUrl),
+          filterByStatus(works, "published")
+        )}
     </table>
     
     <h3>Works in progress</h3>
@@ -51,6 +51,9 @@ module.exports = (data) => {
     
     <h3>Examples and tests</h3>
     <table class="work-list">
-        ${catMap(workRow(data.site.scoreBaseUrl), filterByStatus(works, "test"))}
+        ${catMap(
+          workRow(data.site.scoreBaseUrl),
+          filterByStatus(works, "test")
+        )}
     </table>`;
 };
