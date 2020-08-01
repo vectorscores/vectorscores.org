@@ -1,3 +1,8 @@
+html {
+  /* always show scrollbar for consistent layout between pages */
+  overflow-y: scroll;
+}
+
 .site-header {
   border-bottom: 1px solid var(--grey-color-light);
   min-height: 56px;

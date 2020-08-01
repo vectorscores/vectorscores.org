@@ -1,7 +1,5 @@
 const { catMap, maybe } = require("eleventy-lib");
-
-const workLink = (title, url) =>
-  `<a href="${url}" class="work-title">${title}</a>`;
+const workLink = require("./work-link.11ty.js");
 
 const filterByStatus = (works, status) =>
   works.filter((w) => w.status === status);
