@@ -4,20 +4,19 @@ module.exports = class {
   data() {
     return {
       pagination: {
-        data: "works",
+        data: "sets",
         size: 1,
         alias: "work",
       },
-      permalink: (data) => `sets/${data.work.title}/`,
+      permalink: (data) => `/${data.work.url.replace("scores", "sets")}/`,
     };
   }
-  //TODO need movement url (can get from using title to find in data
-  //TODO url is currently title, needs to be slugified
+  // TODO change base url to scores site
   render(data) {
     return `<h1>${data.work.title}</h1>
 <ul>
 ${catMap(
-  (m) => `<li><a href="/scores/${m}">${m}</a></li>`,
+  (m) => `<li><a href="${m.url}">${m.title}</a></li>`,
   data.work.movements
 )}
 </ul>

@@ -15,7 +15,7 @@ const workRow = (baseUrl) => (d) => {
         <td>
           ${workLink(
             d.title,
-            hasMovements ? d.url.replace("scores", "set") : baseUrl + d.url
+            hasMovements ? d.url.replace("scores", "sets") : baseUrl + d.url
           )}${maybe(`, for ${d.instrumentation}`, d.instrumentation)}
         </td>
         <td class="work-list-duration">
