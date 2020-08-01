@@ -16,7 +16,7 @@ module.exports = class {
     return `<h1>${data.work.title}</h1>
 <ul>
 ${catMap(
-  (m) => `<li><a href="${m.url}">${m.title}</a></li>`,
+  (m) => `<li><a href="${data.site.scoreBaseUrl + m.url}">${m.title}</a></li>`,
   data.work.movements
 )}
 </ul>
