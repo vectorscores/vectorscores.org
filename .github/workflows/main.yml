@@ -22,3 +22,5 @@ jobs:
         path: actions
     - name: test action
       uses: ./actions
+      with:
+        package-json-path: ../repo/package.json
