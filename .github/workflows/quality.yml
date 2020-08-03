@@ -1,4 +1,4 @@
-name: main
+name: quality
 
 on:
   push:
@@ -20,7 +20,7 @@ jobs:
       with:
         repository: vectorscores/actions
         path: actions
-    - name: test action
+    - name: quality check
       uses: ./actions
       with:
         cwd: ./repo
