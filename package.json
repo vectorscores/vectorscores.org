@@ -2,15 +2,15 @@
   "name": "@vectorscores/vectorscores.org",
   "version": "1.0.0",
   "description": "",
+  "homepage": "https://vectorscores.org",
+  "author": "John Teske",
+  "license": "MIT",
   "scripts": {
     "build": "eleventy",
     "format": "prettier '**/*.js' --write",
     "serve": "eleventy --serve",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "homepage": "https://vectorscores.org",
-  "author": "John Teske",
-  "license": "MIT",
   "dependencies": {
     "@11ty/eleventy": "^0.11.0",
     "@typescript-eslint/eslint-plugin": "^3.7.1",
