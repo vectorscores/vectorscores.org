@@ -21,4 +21,4 @@ jobs:
     - name: test action
       uses: ./actions
       with:
-        package-json-path: "./package.json"
+        package-json-path: "../package.json"
