@@ -23,4 +23,5 @@ jobs:
     - name: test action
       uses: ./actions
       with:
-        package-json-path: ../repo/package.json
+        cwd: ../repo
+        package-json-path: package.json
