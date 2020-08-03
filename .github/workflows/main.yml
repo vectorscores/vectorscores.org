@@ -19,6 +19,6 @@ jobs:
         repository: vectorscores/actions
         path: actions
     - name: test action
-      uses: ./actions
+      uses: actions
       with:
         package-json-path: "../package.json"
