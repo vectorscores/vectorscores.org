@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "homepage": "https://vectorscores.org",
-  "author": "John Teske",
   "license": "MIT",
+  "author": "John Teske",
   "scripts": {
     "build": "eleventy",
     "format": "prettier '**/*.js' --write",
