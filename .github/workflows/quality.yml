@@ -7,9 +7,9 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
+  package:
+    name: package.json
     runs-on: ubuntu-latest
-
     steps:
     - name: checkout
       uses: actions/checkout@v2
@@ -24,3 +24,15 @@ jobs:
       uses: ./actions
       with:
         cwd: ./repo
+  lint:
+    name: lint
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v2
+    - name: lint
+      uses: docker://github/super-linter:v3
+      env:
+        VALIDATE_ALL_CODEBASE: false
+        DEFAULT_BRANCH: main
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
