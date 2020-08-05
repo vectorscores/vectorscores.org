@@ -1,6 +1,6 @@
 :root {
   --font-size-scale: 1.25;
-  --base-font-family: Courier, monospace;
+  --base-font-family: 'Courier', monospace;
   --head-font-family: 'Times New Roman', serif;
   --base-font-size: 15px;
   --base-font-weight: 400;
