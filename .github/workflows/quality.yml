@@ -24,6 +24,8 @@ jobs:
       uses: ./actions
       with:
         cwd: ./repo
+    - name: debug
+      run: ls repo
     - name: lint
       uses: docker://github/super-linter:v3
       env:
