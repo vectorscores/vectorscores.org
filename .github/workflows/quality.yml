@@ -8,7 +8,7 @@ on:
 
 jobs:
   package:
-    name: package.json
+    name: quality
     runs-on: ubuntu-latest
     steps:
     - name: checkout
@@ -20,7 +20,7 @@ jobs:
       with:
         repository: vectorscores/actions
         path: actions
-    - name: quality check
+    - name: package.json
       uses: ./actions
       with:
         cwd: ./repo
@@ -31,8 +31,8 @@ jobs:
         DEFAULT_BRANCH: main
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         LINTER_RULES_PATH: repo
-        JAVASCRIPT_ES_CONFIG_FILE: ./.eslintrc.js
-        TYPESCRIPT_ES_CONFIG_FILE: ./.eslintrc.js
+        JAVASCRIPT_ES_CONFIG_FILE: .eslintrc.js
+        TYPESCRIPT_ES_CONFIG_FILE: .eslintrc.js
         VALIDATE_CSS: true
         VALIDATE_JAVASCRIPT_ES: true
         VALIDATE_JSON: true
