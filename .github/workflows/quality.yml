@@ -25,7 +25,7 @@ jobs:
       with:
         cwd: ./repo
     - name: debug
-      run: ls repo
+      run: ls -al repo
     - name: lint
       uses: docker://github/super-linter:v3
       env:
