@@ -24,19 +24,13 @@ jobs:
       uses: ./actions
       with:
         cwd: ./repo
-  lint:
-    name: lint
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout Code
-      uses: actions/checkout@v2
     - name: lint
       uses: docker://github/super-linter:v3
       env:
         #VALIDATE_ALL_CODEBASE: false
         DEFAULT_BRANCH: main
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        LINTER_RULES_PATH: .
+        LINTER_RULES_PATH: repo
         JAVASCRIPT_ES_CONFIG_FILE: ./.eslintrc.js
         TYPESCRIPT_ES_CONFIG_FILE: ./.eslintrc.js
         VALIDATE_CSS: true
