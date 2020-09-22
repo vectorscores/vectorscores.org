@@ -7,6 +7,7 @@
   "author": "John Teske",
   "scripts": {
     "build": "eleventy",
+    "deploy": "SITE_BASE_URL=vectorscores.org npm run build && gh-pages -d _site",
     "format": "prettier '**/*.js' --write",
     "serve": "eleventy --serve",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -22,6 +23,7 @@
     "eleventy-lib": "github:johnteske/eleventy-lib",
     "eslint": "^7.6.0",
     "ffdb-jtm": "github:johnteske/ffdb-jtm",
+    "gh-pages": "^2.2.0",
     "prettier": "^2.0.5",
     "typescript": "^3.9.7"
   }
