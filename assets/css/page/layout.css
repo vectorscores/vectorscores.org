@@ -44,6 +44,23 @@ html {
   text-decoration: underline;
 }
 
+#maintenance {
+  margin-bottom: var(--spacing-unit);
+  border: 1px solid var(--link-color);
+  padding: var(--spacing-unit);
+}
+
+#maintenance header {
+  /* same as h3 */
+font-size: calc(1em * var(--font-size-scale) * var(--font-size-scale));
+  text-transform: uppercase;
+  margin-bottom: 1em;
+}
+
+#maintenance p {
+  margin: 0;
+}
+
 /*
     @include media-query(var(--on)-palm) {
         position: absolute;
