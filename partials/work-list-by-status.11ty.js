@@ -8,12 +8,11 @@ const hasFormat = (formats, format) =>
   formats != null && formats.includes(format);
 
 const workRow = (baseUrl) => (d) => {
-  const hasMovements = d.movements.length > 0;
   return `<tr class="work-list-row">
         <td>
           ${workLink(
             d.title,
-            hasMovements ? d.url.replace("scores", "sets") : baseUrl + d.url
+            d.url
           )}${maybe(`, for ${d.instrumentation}`, d.instrumentation)}
         </td>
         <td class="work-list-duration">

@@ -12,6 +12,6 @@ module.exports = {
     { name: "johnteskemusic.com", url: "https://johnteskemusic.com" },
   ],
   baseUrl: process.env.SITE_BASE_URL || "",
-  scoreBaseUrl: process.env.SCORES_BASE_URL || "http://localhost:8081",
+  scoreBaseUrl: process.env.SITE_BASE_URL || "",
   assetsUrl: "assets",
 };
