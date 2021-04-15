@@ -14,8 +14,8 @@
   },
   "dependencies": {
     "@11ty/eleventy": "^0.12.1",
-    "@typescript-eslint/eslint-plugin": "^3.7.1",
-    "@typescript-eslint/parser": "^3.7.1",
+    "@typescript-eslint/eslint-plugin": "^3.10.1",
+    "@typescript-eslint/parser": "^3.10.1",
     "@vectorscores/configs": "github:vectorscores/configs",
     "@vectorscores/design": "github:vectorscores/design",
     "@vectorscores/scores": "github:vectorscores/scores#v3-gh-pages-test",
@@ -24,7 +24,7 @@
     "eslint": "^7.6.0",
     "ffdb-jtm": "github:johnteske/ffdb-jtm",
     "gh-pages": "^2.2.0",
-    "prettier": "^2.0.5",
+    "prettier": "^2.2.1",
     "typescript": "^3.9.7"
   }
 }
