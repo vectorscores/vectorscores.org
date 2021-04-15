@@ -24,7 +24,7 @@
     "eslint": "^7.6.0",
     "ffdb-jtm": "github:johnteske/ffdb-jtm",
     "gh-pages": "^2.2.0",
-    "prettier": "^2.0.5",
+    "prettier": "^2.2.1",
     "typescript": "^3.9.7"
   }
 }
